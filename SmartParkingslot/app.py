@@ -9,7 +9,7 @@ import tempfile
 from PIL import Image
 import torch
 import time
-
+from pathlib import Path
 # Set page configuration
 st.set_page_config(
     page_title="Smart Parking Navigation System",
@@ -352,7 +352,9 @@ def main():
         
         # Model selection
         st.markdown("### Model Settings")
-        model_path = st.text_input("YOLOv8 Model Path", "best.pt")
+        default_model_path = str(Path(__file__).parent / "best.pt")
+        model_path = st.text_input("YOLOv8 Model Path", default_model_path)
+        st.write("Model path:", model_path)
         conf_threshold = st.slider("Detection Confidence", 0.1, 1.0, 0.25, 0.05)
         
         st.markdown("---")
