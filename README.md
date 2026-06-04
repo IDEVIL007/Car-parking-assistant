@@ -30,9 +30,63 @@ Smart Cities
 Commercial Parking Facilities
 How to Run the Project
 
-Add this section in your README so recruiters can test the project easily.
 
 Prerequisites
 Python 3.10+
 Git
 Virtual Environment (Recommended)
+Step 1: Clone the Repository
+git clone https://github.com/yourusername/Smart-Parking-Assistant.git
+
+cd Smart-Parking-Assistant
+Step 2: Create Virtual Environment
+Windows
+python -m venv venv
+
+venv\Scripts\activate
+Linux / Mac
+python3 -m venv venv
+
+source venv/bin/activate
+Step 3: Install Dependencies
+
+If you create a clean requirements file:
+
+pip install -r requirements.txt
+
+Or install the main dependencies manually:
+
+pip install streamlit ultralytics opencv-python numpy pathfinding pillow torch torchvision
+Step 4: Verify Model File
+
+Ensure the trained model file is present:
+
+best.pt
+
+Project structure:
+
+SmartParkingAssistant/
+│
+├── app.py
+├── best.pt
+├── demo.mp4
+├── requirements.txt
+└── README.md
+Step 5: Run the Application
+streamlit run app.py
+Step 6: Open in Browser
+
+Streamlit will automatically generate a URL:
+
+http://localhost:8501
+
+Open it in your browser.
+
+Step 7: Upload Parking Image/Video
+Upload a parking lot image or video.
+The system detects:
+Empty Slots (Green)
+Occupied Slots (Red)
+Select a parking slot.
+View the shortest navigation path to the available parking space.
+
